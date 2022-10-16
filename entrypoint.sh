@@ -97,7 +97,7 @@ _git_push() {
   echo "Pushing to source"
   [ -n "${INPUT_COMMIT_BRANCH}" ] && git push origin "${INPUT_COMMIT_BRANCH}" "${FORCE_OPT}"
   echo $?
-  [ -n "${INPUT_COMMIT_TAG}" ] && git push origin "${INPUT_COMMIT_TAG}" "${FORCE_OPT}"
+  [ -n "${INPUT_COMMIT_TAG}" ] && git push origin "${INPUT_COMMIT_TAG}" "${FORCE_OPT}" || return 0
   echo $?
 }
 
