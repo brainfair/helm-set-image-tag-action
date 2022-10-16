@@ -105,12 +105,20 @@ if [ "${INPUT_VERBOSE}" == "true" ]; then
 fi
 
 _git_switch_to_branch
+echo $?
 _update_values
+echo $?
 _update_chart_version
+echo $?
 _update_helm_docs
+echo $?
 if [ "${INPUT_COMMIT_AND_PUSH}" == "true" ]; then
   _git_add
+  echo $?
   _git_commit
+  echo $?
   _git_tag
+  echo $?
   _git_push
+  echo $?
 fi
