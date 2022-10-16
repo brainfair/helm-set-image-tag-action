@@ -45,6 +45,7 @@ _update_chart_version() {
   [ -n "${INPUT_BUMP_LEVEL}" ] || return 0
   echo "Bumping chart version... (bump_level: ${INPUT_BUMP_LEVEL})"
   pybump bump --file $(dirname ${INPUT_VALUES_FILES})/Chart.yaml  --level ${INPUT_BUMP_LEVEL}
+  pybump bump --file $(dirname ${INPUT_VALUES_FILES})/Chart.yaml  --level ${INPUT_BUMP_LEVEL} --app-version --set-version ${INPUT_TAG_VALUE}
 }
 
 _update_helm_docs() {
