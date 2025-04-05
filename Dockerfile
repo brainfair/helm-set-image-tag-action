@@ -10,7 +10,7 @@ LABEL "homepage"="https://github.com/Nextdoor/helm-set-image-tag-action"
 LABEL "maintainer"="diranged"
 
 RUN apk --no-cache add bash yq git patch py-pip py3-ruamel.yaml gcc musl-dev python3-dev
-RUN pip install pybump yamale yamllint pyyaml
+RUN pip install pybump yamale yamllint pyyaml --break-system-packages
 
 COPY --from=alpine/helm:latest /usr/bin/helm /usr/bin/helm
 COPY --from=jnorwood/helm-docs:v1.14.2 /usr/bin/helm-docs /usr/bin/helm-docs
